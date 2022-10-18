@@ -1,0 +1,16 @@
+C:\Users\Еван\OneDrive\Рабочий стол\C#\LAB2\bin\Debug\net5.0\LAB2.exe
+C:\Users\Еван\OneDrive\Рабочий стол\C#\LAB2\bin\Debug\net5.0\LAB2.deps.json
+C:\Users\Еван\OneDrive\Рабочий стол\C#\LAB2\bin\Debug\net5.0\LAB2.runtimeconfig.json
+C:\Users\Еван\OneDrive\Рабочий стол\C#\LAB2\bin\Debug\net5.0\LAB2.runtimeconfig.dev.json
+C:\Users\Еван\OneDrive\Рабочий стол\C#\LAB2\bin\Debug\net5.0\LAB2.dll
+C:\Users\Еван\OneDrive\Рабочий стол\C#\LAB2\bin\Debug\net5.0\ref\LAB2.dll
+C:\Users\Еван\OneDrive\Рабочий стол\C#\LAB2\bin\Debug\net5.0\LAB2.pdb
+C:\Users\Еван\OneDrive\Рабочий стол\C#\LAB2\obj\Debug\net5.0\LAB2.csproj.AssemblyReference.cache
+C:\Users\Еван\OneDrive\Рабочий стол\C#\LAB2\obj\Debug\net5.0\LAB2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Еван\OneDrive\Рабочий стол\C#\LAB2\obj\Debug\net5.0\LAB2.AssemblyInfoInputs.cache
+C:\Users\Еван\OneDrive\Рабочий стол\C#\LAB2\obj\Debug\net5.0\LAB2.AssemblyInfo.cs
+C:\Users\Еван\OneDrive\Рабочий стол\C#\LAB2\obj\Debug\net5.0\LAB2.csproj.CoreCompileInputs.cache
+C:\Users\Еван\OneDrive\Рабочий стол\C#\LAB2\obj\Debug\net5.0\LAB2.dll
+C:\Users\Еван\OneDrive\Рабочий стол\C#\LAB2\obj\Debug\net5.0\ref\LAB2.dll
+C:\Users\Еван\OneDrive\Рабочий стол\C#\LAB2\obj\Debug\net5.0\LAB2.pdb
+C:\Users\Еван\OneDrive\Рабочий стол\C#\LAB2\obj\Debug\net5.0\LAB2.genruntimeconfig.cache
