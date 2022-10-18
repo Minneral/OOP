@@ -27,8 +27,6 @@ class Program
 
 
 
-        //int n = (int)(new Random().NextInt64()) % 50;
-
         // б) Создать двумерный массив типа double. Заполнить массив случайными числами
         double[,] array = new double[2,3];  // Создаем массив array с двумя строками и тремя столбцами
         for(int i = 0;i < array.GetLength(0); i++) // array.GetLength(0) возвращает размер нулевого измерения, то есть число "2"
@@ -53,7 +51,7 @@ class Program
 
         Date d2 = new Date("22", "september", "2022");
 
-        if(d1.Equals(d2))  // Проверяем объекты d1 и d2 на эдинтичность
+        if(d1.Equals(d2))  // Проверяем объекты d1 и d2 на идентичность
         {
             Console.WriteLine("Dates are equals"); // Если d1 равен d2 (То есть все поля совпадают), то выводим этот текст
         }
