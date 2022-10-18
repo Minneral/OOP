@@ -1,0 +1,15 @@
+C:\Users\Еван\OneDrive\Рабочий стол\C#\KR\obj\Debug\net6.0\KR.csproj.AssemblyReference.cache
+C:\Users\Еван\OneDrive\Рабочий стол\C#\KR\obj\Debug\net6.0\KR.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Еван\OneDrive\Рабочий стол\C#\KR\obj\Debug\net6.0\KR.AssemblyInfoInputs.cache
+C:\Users\Еван\OneDrive\Рабочий стол\C#\KR\obj\Debug\net6.0\KR.AssemblyInfo.cs
+C:\Users\Еван\OneDrive\Рабочий стол\C#\KR\obj\Debug\net6.0\KR.csproj.CoreCompileInputs.cache
+C:\Users\Еван\OneDrive\Рабочий стол\C#\KR\bin\Debug\net6.0\KR.exe
+C:\Users\Еван\OneDrive\Рабочий стол\C#\KR\bin\Debug\net6.0\KR.deps.json
+C:\Users\Еван\OneDrive\Рабочий стол\C#\KR\bin\Debug\net6.0\KR.runtimeconfig.json
+C:\Users\Еван\OneDrive\Рабочий стол\C#\KR\bin\Debug\net6.0\KR.dll
+C:\Users\Еван\OneDrive\Рабочий стол\C#\KR\bin\Debug\net6.0\KR.pdb
+C:\Users\Еван\OneDrive\Рабочий стол\C#\KR\obj\Debug\net6.0\KR.dll
+C:\Users\Еван\OneDrive\Рабочий стол\C#\KR\obj\Debug\net6.0\refint\KR.dll
+C:\Users\Еван\OneDrive\Рабочий стол\C#\KR\obj\Debug\net6.0\KR.pdb
+C:\Users\Еван\OneDrive\Рабочий стол\C#\KR\obj\Debug\net6.0\KR.genruntimeconfig.cache
+C:\Users\Еван\OneDrive\Рабочий стол\C#\KR\obj\Debug\net6.0\ref\KR.dll
