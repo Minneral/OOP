@@ -10,25 +10,22 @@ namespace KR;
 public class Date
 {
     //  -> (1) В нашем классе должны быть поля day, month, year
-    string day; // Закрытое поле day
-    public string Day // Автоматическое свойство для поля day на чтение и запись
+    public string Day // Автоматическое свойство на чтение и запись
     {
         get; set;
     }
-    string month; // Закрытое поле month
-    public string Month // Автоматическое свойство для поля day на чтение и запись
+    public string Month // Автоматическое свойство на чтение и запись
     {
         get; set;
     }
-    string year; // Закрытое поле year
-    public string Year // Автоматическое свойсвто для поля day только на чтение
+    public string Year // Автоматическое свойсвто только на чтение
     {
         get;
     }
 
     public override int GetHashCode() // Переопределение метода GetHashCode() для дальнейшего его использования в методе Equals
     {
-        return HashCode.Combine(day + month + year);  // HashCode.Combine() возвращает контрольную сумму от введенного аргумента, то есть от (day + month + year)
+        return HashCode.Combine(Day + Month + Year);  // HashCode.Combine() возвращает контрольную сумму от введенного аргумента, то есть от (day + month + year)
     }
     public override bool Equals(object? obj) // Переопределение метода Equals для сравнения наших объектов класса Date
     {
@@ -37,9 +34,9 @@ public class Date
 
     public Date(string day, string month, string year) // Конструктор с параметрами
     {
-        this.day = day;      // Ключевое слово this. возвращает ссылку на текущий объект
-        this.year = year;
-        this.month = month;
+        this.Day = day;      // Ключевое слово this. возвращает ссылку на текущий объект
+        this.Year = year;
+        this.Month = month;
     }
     
     public Date() : this("", "", "") { } // Пустой конструктор, при вызове которого, тот запускает другой конструктор (Определенный у нас чуть выше) со следующей сигнатурой (stirng, string, string)
@@ -52,9 +49,9 @@ public class Date
             {
 
                 case 1:
-                    return d.day;  // Если n равен 1, то возвращаем значение поля day
+                    return d.Day;  // Если n равен 1, то возвращаем значение поля day
                 case 2:
-                    return d.month; // Если n равен 2, то возвращаем значение поля month
+                    return d.Month; // Если n равен 2, то возвращаем значение поля month
                 default:
                     throw new Exception("Other case"); // Во всех остальных случаях генерируем новое исключение, используя конструкцию "throw new Exception()", с текстом "Other case"
 
