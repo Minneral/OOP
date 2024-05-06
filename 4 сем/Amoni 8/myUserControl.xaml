@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="Amoni.myUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Amoni"
+             x:Name="myUserControl1"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="200">
+    <Grid>
+        <Border Background="LightGreen">
+            <TextBlock Text="{Binding ControlContent, ElementName=myUserControl1}"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontSize="20"/>
+        </Border>
+    </Grid>
+</UserControl>

@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="LR4_5.MVVM.View.AddItemView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vms="clr-namespace:LR4_5.MVVM.ViewModel"
+             xmlns:local="clr-namespace:LR4_5.MVVM.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="700"
+             Background="AliceBlue">
+
+    <UserControl.DataContext>
+        <vms:AddItemViewModel/>
+    </UserControl.DataContext>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Margin="10 10 10 10" HorizontalAlignment="Left" Width="320">
+            <TextBlock Text="Название:"/>
+            <TextBox Text="{Binding Name}"/>
+
+            <TextBlock Text="Описание:"/>
+            <TextBox Height="100"
+                     Text="{Binding Description}"/>
+
+            <TextBlock Text="Цена:"/>
+            <TextBox Text="{Binding Price}"/>
+
+            <TextBlock Text="Полное описание:"/>
+            <TextBox Height="100"
+                     Text="{Binding FullDescription}"/>
+
+            <TextBlock Text="Ссылка на картинку:"/>
+            <TextBox Text="{Binding ImageUrl}"/>
+
+            <Button Content="Добавить"
+                Width="200"
+                Height="40"
+                Margin="0 20 0 0"
+                Command="{Binding AddProductCommand}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Width="200" HorizontalAlignment="Center"
+                    Margin="0 20 00 20">
+            <Image Source="{Binding ImageUrl}"
+                   Height="200"/>
+
+            <TextBlock Text="{Binding Name}"
+                       Margin="0 10 0 0"/>
+            <TextBlock Text="{Binding Description}"
+                       Margin="0 10 0 0"/>
+            <TextBlock Text="{Binding Price}"
+                       Margin="0 10 0 0"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

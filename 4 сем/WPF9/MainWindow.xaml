@@ -1,0 +1,190 @@
+﻿<Window x:Class="WPF9.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF9"
+        mc:Ignorable="d"
+        Title="Entity Framework" Height="720" Width="1600">
+
+    <Window.DataContext>
+        <local:MainWindowViewModel x:Name="ViewModel"/>
+    </Window.DataContext>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="300"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.ColumnSpan="2"
+                Grid.RowSpan="2"
+                Background="AliceBlue"/>
+        <Border Grid.Column="2"
+                Grid.ColumnSpan="2"
+                Grid.RowSpan="2"
+                Background="LightPink"/>
+
+        <DataGrid x:Name="bookGrid"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  Margin="20 20 20 20"
+                  ItemsSource="{Binding BooksList, UpdateSourceTrigger=PropertyChanged}"
+                  SelectionChanged="Books_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID"
+                                    Width="0.4*"
+                                    Binding="{Binding BookID}"/>
+                <DataGridTextColumn Header="Название"
+                                    Width="*"
+                                    Binding="{Binding Title}"/>
+                <DataGridTextColumn Header="Описание"
+                                    Width="*"
+                                    Binding="{Binding Description}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <DataGrid AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  Margin="20 20 20 20"
+                  Grid.Column="3"
+                  ItemsSource="{Binding AuthorsList, UpdateSourceTrigger=PropertyChanged}"
+                  SelectionChanged="Authors_SelectionChanged">
+            
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID"
+                                    Width="0.2*"
+                                    Binding="{Binding AuthorID}"/>
+                <DataGridTextColumn Header="Имя"
+                                    Width="*"
+                                    Binding="{Binding AuthorName}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+        <StackPanel Grid.Row="1"
+                    Margin="20 20 20 20">
+
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 0 0 40">
+                <Button Content="Добавить"
+                        Height="40"
+                        Width="120"
+                        Margin="0 0 20 0"
+                        Command="{Binding AddBookCommand}"/>
+
+                <Button Content="Удалить"
+                        Height="40"
+                        Width="120"
+                        Margin="0 0 20 0"
+                        Command="{Binding DeleteBookCommand}"/>
+
+                <Button Content="Редактировать"
+                        Height="40"
+                        Width="120"
+                        Margin="0 0 20 0"
+                        Command="{Binding UpdateBookCommand}"/>
+
+                <StackPanel>
+                    <TextBox Width="190"
+                             HorizontalAlignment="Right"
+                             Margin="0 0 10 4"
+                             Text="{Binding BookSearchName, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBox Width="190"
+                             HorizontalAlignment="Right"
+                             Margin="0 0 10 0"
+                             Text="{Binding BookSearchDesc, UpdateSourceTrigger=PropertyChanged}"/>
+                </StackPanel>
+                
+
+                <Button Content="Поиск"
+                        Height="40"
+                        Width="120"
+                        Margin="0 0 20 0"
+                        Command="{Binding SearchBookCommand}"/>
+
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Width="300"
+                            Margin="0 0 40 0">
+                    <TextBlock Text="Название книги:"/>
+                    <TextBox Margin="0 0 0 20"
+                             Text="{Binding BookName, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBlock Text="Описание книги:"/>
+                    <TextBox Margin="0 0 0 20"
+                             Text="{Binding BookDescription, UpdateSourceTrigger=PropertyChanged}"/>
+                </StackPanel>
+
+                <StackPanel Width="300">
+                    <TextBlock Text="Авторы:"/>
+                    <ListBox Height="150"
+                             x:Name="AuthorsListBox"
+                             ItemsSource="{Binding AuthorsNameList, UpdateSourceTrigger=PropertyChanged}"/>
+                </StackPanel>
+            </StackPanel>
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="1"
+                    Grid.Column="1"
+                    Margin="20 20 20 20">
+
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 0 0 40">
+                <Button Content="Добавить"
+                        Height="40"
+                        Width="120"
+                        Margin="0 0 20 0"
+                        Command="{Binding AddAuthorCommand}"/>
+
+                <Button Content="Удалить"
+                        Height="40"
+                        Width="120"
+                        Margin="0 0 20 0"
+                        Command="{Binding DeleteAuhtorCommand}"/>
+
+                <Button Content="Редактировать"
+                        Height="40"
+                        Width="120"
+                        Margin="0 0 20 0"
+                        Command="{Binding UpdateAuthorCommand}"/>
+
+                <TextBox Width="200"
+                         Margin="0 0 20 0"
+                         Text="{Binding AuthorSearchName,UpdateSourceTrigger=PropertyChanged}"/>
+
+                <Button Content="Поиск"
+                        Height="40"
+                        Width="120"
+                        Margin="0 0 20 0"
+                        Command="{Binding SearchAuthorCommand}"/>
+
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Width="300"
+                            Margin="0 0 40 0">
+                    <TextBlock Text="Имя автора:"/>
+                    <TextBox Margin="0 0 0 20"
+                             Text="{Binding AuthorName, UpdateSourceTrigger=PropertyChanged}"/>
+
+                </StackPanel>
+
+                <StackPanel Width="300">
+                    <TextBlock Text="Книги:"/>
+                    <ListBox Height="150"
+                         x:Name="BooksListBox"
+                             ItemsSource="{Binding BooksNameList, UpdateSourceTrigger=PropertyChanged}"/>
+                </StackPanel>
+            </StackPanel>
+
+        </StackPanel>
+
+    </Grid>
+</Window>

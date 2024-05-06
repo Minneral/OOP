@@ -1,0 +1,81 @@
+﻿<Window x:Class="LR4_5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:view="clr-namespace:LR4_5.MVVM.View"
+        xmlns:vms="clr-namespace:LR4_5.MVVM.ViewModel"
+        xmlns:local="clr-namespace:LR4_5"
+        mc:Ignorable="d"
+        Title="MainWindow" MinHeight="600" MinWidth="920">
+
+    <Window.DataContext>
+        <vms:MainViewModel/>
+    </Window.DataContext>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="71*"/>
+            <ColumnDefinition Width="109*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Amoni"
+                   FontSize="36"
+                   FontWeight="Bold"
+                   FontFamily="montserrat"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Cursor="Hand"/>
+
+        <StackPanel Grid.Row="1">
+            <RadioButton Content="Пицца"
+                         FontSize="28"
+                         IsChecked="True"
+                         FontFamily="montserrat"
+                         BorderThickness="0"
+                         Height="60"
+                         VerticalContentAlignment="Center"
+                         Command="{Binding ShowPizzaCommand}"/>
+
+            <RadioButton Content="Закуски"
+                         FontSize="28"
+                         FontFamily="montserrat"
+                         BorderThickness="0"
+                         Height="60"
+                         VerticalContentAlignment="Center"
+                         Command="{Binding ShowSnackCommand}"/>
+
+            <RadioButton Content="Напитки"
+                         FontSize="28"
+                         FontFamily="montserrat"
+                         BorderThickness="0"
+                         Height="60"
+                         VerticalContentAlignment="Center"
+                         Command="{Binding ShowDrinkCommand}"/>
+        </StackPanel>
+
+        <ContentControl Grid.Column="1"
+                        Grid.Row="1"
+                        Margin="10,10,10,10"
+                        Content="{Binding CurrentView}" Grid.ColumnSpan="2"/>
+
+        <Button Content="Добавить товар"
+                Grid.Column="1"
+                Width="240"
+                Height="50"
+                HorizontalAlignment="Left"
+                Margin="10,15,0,15"
+                Background="BurlyWood"
+                Foreground="White"
+                FontSize="24"
+                FontWeight="Medium"
+                FontFamily="montserrat"
+                Command="{Binding AddProductCommand}"/>
+    </Grid>
+</Window>

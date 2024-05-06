@@ -1,0 +1,73 @@
+﻿<Window x:Class="WPF4_5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModel="clr-namespace:WPF4_5.MVVM.ViewModel"
+        xmlns:local="clr-namespace:WPF4_5"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="920">
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Amoni"
+                   FontSize="32"
+                   FontWeight="Bold"
+                   TextAlignment="Center"
+                   VerticalAlignment="Center"
+                   Cursor="Hand"/>
+
+
+        <StackPanel Grid.Row="1">
+            <RadioButton Content="Пицца"
+                         BorderThickness="0"
+                         IsChecked="True"
+                         FontSize="28"
+                         FontWeight="Medium"
+                         Height="60"
+                         VerticalContentAlignment="Center"
+                         Command="{Binding HomeViewCommand}"/>
+
+            <RadioButton Content="Закуски"
+                         BorderThickness="0"
+                         FontSize="28"
+                         FontWeight="Medium"
+                         Height="60"
+                         VerticalContentAlignment="Center"
+                         Command="{Binding SnacksViewCommand}"/>
+
+            <RadioButton Content="Напитки"
+                         BorderThickness="0"
+                         FontSize="28"
+                         FontWeight="Medium"
+                         Height="60"
+                         VerticalContentAlignment="Center"
+                         Command="{Binding DrinksViewCommand}"/>
+        </StackPanel>
+
+        <ContentControl Grid.Row="1"
+                        Grid.Column="1"
+                        Margin="10"
+                        Content="{Binding CurrentView}"/>
+
+        <Button Content="Добавить"
+                Grid.Column="1"
+                Width="200"
+                Height="40"
+                HorizontalAlignment="Left"
+                Margin="10 0 0 0"
+                Command="{Binding AddItemCommand}"/>
+    </Grid>
+</Window>

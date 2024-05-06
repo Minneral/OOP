@@ -1,0 +1,65 @@
+﻿<Window x:Class="WPF_11.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_11"
+        xmlns:vm="clr-namespace:WPF_11.MVVM.ViewModel"
+        xmlns:view="clr-namespace:WPF_11.MVVM.View"
+        mc:Ignorable="d"
+        Title="Главная" Height="600" Width="900" ResizeMode="NoResize">
+
+    <Window.DataContext>
+        <vm:MainViewModel/>
+    </Window.DataContext>
+    
+    <Grid Background="#1d2328">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+
+        <TextBlock Text="БГТУ"
+                   Foreground="White"
+                   FontSize="32"
+                   FontWeight="Bold"
+                   FontFamily="Montserrat"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   FontStyle="Italic"/>
+
+        <StackPanel Grid.Row="1">
+            <RadioButton Content="Студенты"
+                         Height="60"
+                         Style="{StaticResource MenuButtonTheme}"
+                         IsChecked="True"
+                         Command="{Binding StudentVMCommand}"/>
+
+            <RadioButton Content="Дисциплины"
+                         Height="60"
+                         Style="{StaticResource MenuButtonTheme}"
+                         Command="{Binding SubjectVMCommand}"/>
+        </StackPanel>
+
+        <UserControl Grid.Column="1" Grid.Row="1" Margin="10">
+            <ContentControl Content="{Binding CurrentView}">
+                <ContentControl.Resources>
+                    <DataTemplate DataType="{x:Type vm:StudentViewModel}">
+                        <view:StudentView DataContext="{Binding}"/>
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type vm:SubjectViewModel}">
+                        <view:SubjectView DataContext="{Binding}"/>
+                    </DataTemplate>
+                </ContentControl.Resources>
+            </ContentControl>
+        </UserControl>
+
+
+    </Grid>
+</Window>

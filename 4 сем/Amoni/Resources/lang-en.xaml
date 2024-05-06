@@ -1,0 +1,18 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:v="clr-namespace:System;assembly=mscorlib">
+
+    <v:String x:Key="ProgramTitle">Amoni</v:String>
+    <v:String x:Key="AddProductWindowTitle">Constructor</v:String>
+    <v:String x:Key="EditProductWindowTitle">Editing</v:String>
+    <v:String x:Key="AddButton">Add</v:String>
+    <v:String x:Key="SaveButton">Save</v:String>
+    <v:String x:Key="ImportButton">Import</v:String>
+    <v:String x:Key="SearchText">Search:</v:String>
+    <v:String x:Key="PriceRangeText">Price range:</v:String>
+    <v:String x:Key="ProductName">Name:</v:String>
+    <v:String x:Key="ProductDescription">Description:</v:String>
+    <v:String x:Key="ProductFullDescription">Full Description:</v:String>
+    <v:String x:Key="ProductPrice">Price:</v:String>
+    <v:String x:Key="ProductImageUrl">Image Url:</v:String>
+</ResourceDictionary>

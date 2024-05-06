@@ -1,0 +1,107 @@
+﻿<Window x:Class="Practice.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Practice"
+        mc:Ignorable="d"
+        MinHeight="720" MinWidth="1240"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True"
+        ResizeMode="CanResize"
+        WindowStartupLocation="CenterScreen"
+        >
+
+    <Border CornerRadius="20"
+            Background="#232427"
+            MouseDown="Border_MouseDown">
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.ColumnSpan="2"
+                    Background="#101415"
+                    CornerRadius="20 20 0 0">
+
+                <Grid HorizontalAlignment="Stretch">
+                    <Label Content="Pizza"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Margin="20 0 0 0"
+                           Foreground="Gray"
+                           FontWeight="SemiBold"/>
+
+                    <StackPanel HorizontalAlignment="Right"
+                                VerticalAlignment="Center"
+                                Orientation="Horizontal"
+                                Margin="0 0 20 0">
+
+                        <Button Width="20" Height="20"
+                                Content="_"
+                                Background="Transparent"
+                                BorderThickness="0"
+                                Foreground="Gray"
+                                FontWeight="Bold"
+                                Margin="0 0 0 4"
+                                Click="ButtonMinimize_Click"/>
+
+                        <Button Width="20" Height="20"
+                                Content="□"
+                                Background="Transparent"
+                                BorderThickness="0"
+                                Foreground="Gray"
+                                FontWeight="Bold"
+                                Click="WindowStateButton_Click"/>
+
+                        <Button Width="20" Height="20"
+                                Content="✕"
+                                Background="Transparent"
+                                BorderThickness="0"
+                                Foreground="Gray"
+                                FontWeight="Bold"
+                                Click="CloseButton_Click"/>
+
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <StackPanel Grid.Row="1"
+                        Grid.Column="0"
+                        Background="#222222">
+
+                <RadioButton Content="Пицца"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="24"
+                             IsChecked="True"
+                             FontWeight="Medium"
+                             Style="{StaticResource MenuButtonTheme}"/>
+
+                <RadioButton Content="Закуски"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="24"
+                             FontWeight="Medium"
+                             Style="{StaticResource MenuButtonTheme}"/>
+
+                <RadioButton Content="Напитки"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="24"
+                             FontWeight="Medium"
+                             Style="{StaticResource MenuButtonTheme}"/>
+
+            </StackPanel>
+        </Grid>
+        
+    </Border>
+</Window>
